@@ -1,2 +1,2 @@
 
-web: demo_golang_v0.0.1
+web: Demo_Golang_v0.0.1

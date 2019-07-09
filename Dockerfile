@@ -19,4 +19,4 @@ ENV HOME /app
 WORKDIR /app
 RUN useradd -m heroku
 USER heroku
-CMD /app/bin/demo_golang_v0.0.1
+CMD /app/demo_golang_v0.0.1

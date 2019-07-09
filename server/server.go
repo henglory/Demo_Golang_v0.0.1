@@ -7,8 +7,8 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
+	"github.com/henglory/Demo_Golang_v0.0.1/config"
 	"github.com/henglory/Demo_Golang_v0.0.1/service"
-	"kbtg.tech/midway-bscanc/conf"
 )
 
 type errorResponse struct {
@@ -50,7 +50,7 @@ func (server Server) ginStart() {
 	})
 
 	server.srv = &http.Server{
-		Addr:    conf.ServicePort,
+		Addr:    config.ServicePort,
 		Handler: r,
 	}
 

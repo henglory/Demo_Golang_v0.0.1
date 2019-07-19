@@ -12,9 +12,9 @@ import (
 )
 
 type errorResponse struct {
-	ResponseCode int64  `json:"responseCode"`
-	Reason       string `json:"reason"`
-	RawRequest   string `json:"rawRequest"`
+	StatusCode int64  `json:"statusCode"`
+	StatusDesc string `json:"statusDesc"`
+	Request    string `json:"request"`
 }
 
 type Server struct {

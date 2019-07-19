@@ -23,8 +23,9 @@ func New(url string, timeout time.Duration, loggingFn func(info interface{}) err
 		Timeout: timeout,
 	}
 	c := &AClient{
-		url:    url,
-		client: client,
+		url:       url,
+		loggingFn: loggingFn,
+		client:    client,
 	}
 	return c
 }

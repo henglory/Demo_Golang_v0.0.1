@@ -49,6 +49,10 @@ func (server Server) ginStart() {
 		c.JSON(200, readiness{Success: true})
 	})
 
+	r.POST("/demo1", func(c *gin.Context) {
+		demo1(server.s, c)
+	})
+
 	server.srv = &http.Server{
 		Addr:    config.ServicePort,
 		Handler: r,

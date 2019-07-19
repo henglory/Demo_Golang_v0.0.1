@@ -5,6 +5,9 @@ import (
 	"os"
 	"os/signal"
 
+	"github.com/henglory/Demo_Golang_v0.0.1/aclient"
+	"github.com/henglory/Demo_Golang_v0.0.1/config"
+	"github.com/henglory/Demo_Golang_v0.0.1/logger"
 	"github.com/henglory/Demo_Golang_v0.0.1/server"
 	"github.com/henglory/Demo_Golang_v0.0.1/service"
 )
@@ -15,7 +18,11 @@ func main() {
 		log.Fatal("$PORT must be set")
 	}
 
-	s := service.Service{}
+	acli := aclient.New(config.ActionAUrl, config.ATimeout, logger.WriteLog)
+
+	s := service.Service{
+		ARequestFn: acli.Request,
+	}
 
 	log.Println("Start server")
 	serv := server.NewServer(s)

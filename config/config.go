@@ -7,7 +7,7 @@ import (
 )
 
 const (
-	ActionAUrl = "https://demo-a-service.herokuapp.com/api/actionA"
+	ActionAUrl = "https://demo-service-stubby.herokuapp.com/api/actionA"
 	ATimeout   = 10 * time.Second
 )
 

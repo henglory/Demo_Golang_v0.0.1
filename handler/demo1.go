@@ -17,6 +17,7 @@ func Demo1(s interface {
 	if req.Z < 0 {
 		res.StatusCode = "02"
 		res.StatusDesc = "Z CANNOT BE NEGATIVE"
+		return
 	}
 	ares, err := s.RequestToA(spec.AReq{
 		X: req.X,

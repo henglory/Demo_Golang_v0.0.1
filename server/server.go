@@ -53,6 +53,10 @@ func (server Server) ginStart() {
 		demo1(server.s, c)
 	})
 
+	r.POST("/demo2", func(c *gin.Context) {
+		demo2(server.s, c)
+	})
+
 	server.srv = &http.Server{
 		Addr:    config.ServicePort,
 		Handler: r,

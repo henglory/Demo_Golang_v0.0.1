@@ -6,6 +6,7 @@ import (
 	"os/signal"
 
 	"github.com/henglory/Demo_Golang_v0.0.1/aclient"
+	"github.com/henglory/Demo_Golang_v0.0.1/bclient"
 	"github.com/henglory/Demo_Golang_v0.0.1/config"
 	"github.com/henglory/Demo_Golang_v0.0.1/logger"
 	"github.com/henglory/Demo_Golang_v0.0.1/server"
@@ -19,9 +20,11 @@ func main() {
 	}
 
 	acli := aclient.New(config.ActionAUrl, config.ATimeout, logger.WriteLog)
+	bcli := bclient.New(config.ActionBUrl, config.BTimeout, logger.WriteLog)
 
 	s := service.Service{
 		ARequestFn: acli.Request,
+		BRequestFn: bcli.Request,
 	}
 
 	log.Println("Start server")

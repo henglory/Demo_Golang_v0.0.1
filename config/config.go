@@ -8,7 +8,9 @@ import (
 
 const (
 	ActionAUrl = "https://demo-service-stubby.herokuapp.com/api/actionA"
+	ActionBUrl = "https://demo-service-stubby.herokuapp.com/api/actionB"
 	ATimeout   = 10 * time.Second
+	BTimeout   = 10 * time.Second
 )
 
 var (

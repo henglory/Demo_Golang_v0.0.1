@@ -43,10 +43,10 @@ func (c *AClient) Request(req spec.AReq) (spec.ARes, error) {
 		return res, err
 	}
 	defer hreq.Body.Close()
-	hreq.Header.Set("Content-Type", "text/json;charset=UTF-8")
+	hreq.Header.Set("Content-Type", "application/json;charset=UTF-8")
 	c.loggingFn(spec.LogAReq{
 		LogTime: spec.JSONTime(time.Now()),
-		Info:    "Start",
+		Info:    "StartCallA",
 		Req:     string(b),
 	})
 	st := time.Now()
@@ -58,7 +58,7 @@ func (c *AClient) Request(req spec.AReq) (spec.ARes, error) {
 	resp, err := ioutil.ReadAll(hresp.Body)
 	c.loggingFn(spec.LogARes{
 		LogTime:  spec.JSONTime(time.Now()),
-		Info:     "End",
+		Info:     "EndCallA",
 		Res:      string(resp),
 		Overhead: time.Since(st).Nanoseconds() / 1000,
 	})
